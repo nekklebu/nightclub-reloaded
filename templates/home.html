@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>nightsakura's nightclub</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+
+<header class="header">
+    <div class="header-align">
+        <div class='header-links'>
+            <a href="https://twitter.com/" class="header-link">
+                <img class="twitterPng" alt="twitter_png" src="{% static 'imgs/twitter.png' %}" width="25" height="25">
+            </a>
+            <a href="https://opensea.io/nightsakura" class="header-link">
+                <img class="openseaPng" alt="opensea_png" src="{% static 'imgs/os.png' %}" width="25" height="25">
+            </a>
+        </div>
+    </div>
+    <h1 class="header-text">Welcome to my nightclub.</h1>
+</header>
+
+<section class="landing-section landing-main">
+    <div class="landing-section-content">
+        <div class="body-bg">
+            <h2 class="brand">What makes it a nightclub, you ask?</h2> <!-- fixed h2 -->
+            <h3>
+                <span class="brand-text">P</span>retty much
+                <span class="brand-text">N</span>othing :3
+            </h3>
+            <p class="landing-main-text">
+            This is just an opportunity for me to practice some tech I don't touch on the job.
+            Most of my professional work has been on and with C++ projects, so I'm branching out a bit.
+            The goal here was primarily to familiarize myself with the 
+            <a href="https://www.djangoproject.com/">Django web framework</a>.
+            <br><br>
+            Please don't judge my css/html skills :(
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="body-bg landing-section landing-features">
+    <section class="landing-feature feature-music-services">
+        <h2>In the future, I might add some <span class="brand-text">stuff</span> here.<br><br>
+            I'm pretty happy with how elements wrap on this page. try mobile :D
+        </h2>
+        <ul>
+            <li>haha</li>
+            <li>nice list</li>
+        </ul>
+    </section>
+</section>
+
+</body>
+</html>

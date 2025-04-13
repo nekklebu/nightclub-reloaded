@@ -1,0 +1,102 @@
+@font-face {
+    font-family: "VCR MONO";
+    src: local('VCR MONO'),
+         url('../fonts/VCR_OSD_MONO_1.001.ttf') format("truetype");
+    font-style: normal;
+    font-weight 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SFAlien";
+    src: local('SFAlien'),
+         url('../fonts/SFAlienEncounters.ttf') format("truetype");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Adventurer";
+    src: local('Adventurer'),
+         url('../fonts/Adventurer.ttf') format("truetype");
+    font-style: normal;
+}
+
+html,
+body {
+    background-image: url('../imgs/background.gif');
+    background-color: lightblue;
+    padding-top: 2px;
+    margin: auto;
+    font-family: "Adventurer" !important;
+    text-align: center;
+}
+
+p { display: inline-block; max-width: 400px; }
+h1 { display: inline-block; max-width: 300px; }
+img { 
+    display: inline-block; 
+    margin-right: 2px;
+}
+
+button { width: 25px; height: 25px; }
+
+.header-links { float: right; }
+
+
+.body-bg {
+    background-color: lightblue;
+    width: 50vw;
+    height: auto;
+    max-width: 600px;
+    display: inline-block;
+    background-position: 10%;
+    background-repeat: no-repeat;
+    background-size: 40%;
+}
+
+ul {
+    display: table;
+    margin: 0 auto;
+}
+
+form {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+.brand-text {
+    font-family: "SFAlien";
+}
+
+.header-text {
+    background-color: lightblue;
+    width: 50vw;
+    max-width: 600px;
+    display: inline-block;
+    text-align: inherit;
+    margin-top: 0px;
+    margin-left: 60px;
+}
+
+.twitterPng {
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@media (max-width:670px) {
+    .body-bg { background-image: none; }
+}
+
+@media (max-width:392px) {
+}
