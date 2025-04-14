@@ -3,7 +3,7 @@
     src: local('VCR MONO'),
          url('../fonts/VCR_OSD_MONO_1.001.ttf') format("truetype");
     font-style: normal;
-    font-weight 400;
+    font-weight: 400;
     font-display: swap;
 }
 
@@ -21,37 +21,40 @@
     font-style: normal;
 }
 
-html,
-body {
-    background-image: url('../imgs/background.gif');
-    background-color: lightblue;
-    padding-top: 2px;
-    margin: auto;
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: url('../imgs/background.gif') no-repeat center center fixed;
+    background-size: cover;
     font-family: "Adventurer" !important;
+    display: flex;
+    flex-direction: column;
     text-align: center;
 }
 
-p { display: inline-block; max-width: 400px; }
-h1 { display: inline-block; max-width: 300px; }
+p {
+    display: inline-block;
+    max-width: 400px;
+}
+
+h1 {
+    display: inline-block;
+    max-width: 400px;
+}
+
 img { 
     display: inline-block; 
     margin-right: 2px;
 }
 
-button { width: 25px; height: 25px; }
+button {
+    width: 25px;
+    height: 25px;
+}
 
-.header-links { float: right; }
-
-
-.body-bg {
-    background-color: lightblue;
-    width: 50vw;
-    height: auto;
-    max-width: 600px;
-    display: inline-block;
-    background-position: 10%;
-    background-repeat: no-repeat;
-    background-size: 40%;
+.header-links {
+    float: right;
 }
 
 ul {
@@ -72,12 +75,11 @@ form {
 
 .header-text {
     background-color: lightblue;
-    width: 50vw;
     max-width: 600px;
     display: inline-block;
     text-align: inherit;
     margin-top: 0px;
-    margin-left: 60px;
+    margin-left: 64px;
 }
 
 .twitterPng {
@@ -95,20 +97,9 @@ a {
 }
 
 @media (max-width:670px) {
-    .body-bg { background-image: none; }
-}
-
-@media (max-width:392px) {
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    background: url('../imgs/background.gif') no-repeat center center fixed;
-    background-size: cover;
-    font-family: "Adventurer" !important;
-    display: flex;
-    flex-direction: column;
+    .body-bg {
+        background-image: none;
+    }
 }
 
 body > main {
@@ -119,15 +110,14 @@ body > main {
 }
 
 .content-wrapper {
-    width: 60%;
-    max-width: 1000px;
+    width: 80%;
+    max-width: 1280px;
     background-color: lightblue;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    margin: 30px auto;
     min-height: 90vh;
-
     box-shadow: 0 0 30px rgba(247, 172, 212, 0.75),
-                0 0 60px rgba(247, 172, 212, 0.6);
+                0 0 60px rgba(247, 172, 212, 0.6),
                 0 0 80px rgba(247, 172, 212, 0.4);
 }
