@@ -1,13 +1,7 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>nightsakura's nightclub</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-</head>
-<body>
+
+{% block content %}
 
 <header class="header">
     <div class="header-align">
@@ -26,7 +20,7 @@
 <section class="landing-section landing-main">
     <div class="landing-section-content">
         <div class="body-bg">
-            <h2 class="brand">What makes it a nightclub, you ask?</h2> <!-- fixed h2 -->
+            <h2 class="brand">What makes it a nightclub, you ask?</h2>
             <h3>
                 <span class="brand-text">P</span>retty much
                 <span class="brand-text">N</span>othing :3
@@ -61,5 +55,4 @@
     </nav>
 </section>
 
-</body>
-</html>
+{% endblock %}
