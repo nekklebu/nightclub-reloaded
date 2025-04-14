@@ -38,9 +38,14 @@ p {
     max-width: 400px;
 }
 
+
 h1 {
+    background-color: lightblue;
+    max-width: 90vw;
     display: inline-block;
-    max-width: 400px;
+    text-align: inherit;
+    margin-top: 0px;
+    margin-left: 64px;
 }
 
 img { 
@@ -73,14 +78,6 @@ form {
     font-family: "SFAlien";
 }
 
-.header-text {
-    background-color: lightblue;
-    max-width: 600px;
-    display: inline-block;
-    text-align: inherit;
-    margin-top: 0px;
-    margin-left: 64px;
-}
 
 .twitterPng {
     margin-left: 2px;
