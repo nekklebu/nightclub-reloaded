@@ -1,7 +1,8 @@
 :root {
     --club-pink: 247, 172, 212;
-    --club-seafoam: 172, 247, 207;
-    --background: url('../imgs/background.gif')
+    --background: url('../imgs/background.gif');
+    --default-font-sz: 16px;
+    --page-margin: 64px;
 }
 
 @font-face {
@@ -30,27 +31,34 @@
 html, body {
     height: 100%;
     margin: 0;
-    padding: 0;
     background: var(--background) no-repeat center center fixed;
     background-size: cover;
     font-family: "Adventurer" !important;
     display: flex;
     flex-direction: column;
-    text-align: center;
+    text-align: left;
 }
 
 p {
-    display: inline-block;
-    max-width: 400px;
-    margin: 0, 64px, 0, 64px
+    font-size: 18px;
+    margin: 20px calc(var(--page-margin) + 32px);
+}
+h1 {
+    font-size: 36px;
+    text-align: center;
+}
+h2 {
+    font-size: 24px;
+    margin: 10px var(--page-margin);
 }
 
+h3 {
+    font-size: 20px;
+    margin: 10px var(--page-margin);
+}
 
-h1 {
-    max-width: 90vw;
-    display: inline-block;
-    text-align: inherit;
-    margin: 0, 64px, 0, 64px
+.default-font-behavior {
+
 }
 
 img { 
@@ -71,7 +79,7 @@ button {
 
 .main-menu {
     position: relative;
-    font-size: 26px;
+    font-size: var(--default-font-sz);
     cursor: pointer;
     padding-top: 6px;
 }
@@ -88,13 +96,12 @@ button {
     0 0 13px rgba(255,255,255,0.3);
     padding: 10px;
     flex-direction: column;
+    text-align: center;
 }
 
 .menu-dropdown a {
     display: block;
-    margin: 5px 0;
     font-family: "VCR MONO", sans-serif;
-    font-size: 16px;
     color: lightblue;
     text-decoration: none;
 }
