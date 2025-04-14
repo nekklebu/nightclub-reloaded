@@ -1,20 +1,28 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>NightClub: Reloaded</title>
-        <link rel="stylesheet", href="{% static 'css/home.css' %}">
-    </head>
-    <body>
-        <nav>
-            <a href="/">Projects</a> |
-            <a href="/blog/">Blog</a> |
-            <a href="/admin/">Admin</a>
-        </nav>
-        <hr>
+<head>
+    <meta charset="UTF-8">
+    <title>NightClub: Reloaded</title>
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
 
-        {% block content %}
-        {% endblock %}
-    </body>
+<body>
+    <nav>
+        <a href="/">Projects</a> |
+        <a href="/blog/">Blog</a> |
+        <a href="/admin/">Admin</a>
+    </nav>
+
+    <main>
+        <div class="content-wrapper">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+
+    <footer>
+        <!--- adding socials here --->
+    </footer>
+</body>
 </html>

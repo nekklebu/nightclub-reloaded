@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 <h1>My Projects</h1>
-<u1>
+<ul>
 {% for project in projects %}
 <li>
     <a href="{% url 'project-detail' project.pk %}">{{ project.title }}</a>

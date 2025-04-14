@@ -100,3 +100,34 @@ a {
 
 @media (max-width:392px) {
 }
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background: url('../imgs/background.gif') no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Adventurer" !important;
+    display: flex;
+    flex-direction: column;
+}
+
+body > main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content-wrapper {
+    width: 60%;
+    max-width: 1000px;
+    background-color: lightblue;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.3);
+    min-height: 90vh;
+
+    box-shadow: 0 0 30px rgba(247, 172, 212, 0.75),
+                0 0 60px rgba(247, 172, 212, 0.6);
+                0 0 80px rgba(247, 172, 212, 0.4);
+}
