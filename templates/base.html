@@ -1,28 +1,42 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>NightClub: Reloaded</title>
-    <link rel="stylesheet" href="{% static 'css/home.css' %}">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <title>NightClub: Reloaded</title>
+        <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    </head>
 
-<body>
-    <nav>
-        <a href="/">Projects</a> |
-        <a href="/blog/">Blog</a> |
-        <a href="/admin/">Admin</a>
-    </nav>
+    <body>
 
-    <main>
-        <div class="content-wrapper">
-            {% block content %}
-            {% endblock %}
-        </div>
-    </main>
+        <main>
+            <div class="content-wrapper">
+                <nav class='nav-bar'>
+                    <div class='nav-sides'></div>
+                    <div class='main-nav'>
+                        <a href="/projects/">Projects</a> |
+                        <a href="/blog/">Blog</a> |
+                        <a href="/admin/">Admin</a>
+                    </div>
 
-    <footer>
-        <!--- adding socials here --->
-    </footer>
-</body>
+                    <div class='socials-links'>
+                        <a href="https://twitter.com/" class="header-link">
+                            <img class="twitterPng" alt="twitter_png" src="{% static 'imgs/twitter.png' %}" width="25" height="25">
+                        </a>
+                        <a href="https://opensea.io/nightsakura" class="header-link">
+                            <img class="openseaPng" alt="opensea_png" src="{% static 'imgs/os.png' %}" width="25" height="25">
+                        </a>
+                    </div>
+                </nav>
+
+
+                {% block content %}
+                {% endblock %}
+            </div>
+        </main>
+
+        <footer>
+            <!--- adding socials here --->
+        </footer>
+    </body>
 </html>

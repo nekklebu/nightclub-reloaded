@@ -1,3 +1,8 @@
+:root {
+    --club-pink: 247, 172, 212;
+    --background: url('../imgs/background.gif')
+}
+
 @font-face {
     font-family: "VCR MONO";
     src: local('VCR MONO'),
@@ -25,7 +30,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background: url('../imgs/background.gif') no-repeat center center fixed;
+    background: var(--background) no-repeat center center fixed;
     background-size: cover;
     font-family: "Adventurer" !important;
     display: flex;
@@ -58,8 +63,35 @@ button {
     height: 25px;
 }
 
-.header-links {
-    float: right;
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.nav-sides {
+    flex: 1;
+}
+
+.main-nav {
+    flex: 2;
+    text-align: center;
+    font-family: "VCR MONO", sans-serif;
+    font-size: 18px;
+}
+
+.socials-links {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 4px;
+}
+
+.socials-links a img {
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
 }
 
 ul {
@@ -75,7 +107,7 @@ form {
 }
 
 .brand-text {
-    font-family: "SFAlien";
+    font-family: "SFAlien", sans-serif;
 }
 
 
@@ -85,7 +117,12 @@ form {
 }
 
 a {
-    color: inherit;
+    color: rgba(var(--club-pink), 1);
+    text-shadow:
+        -1px -1px 0 black,
+         1px -1px 0 black,
+        -1px  1px 0 black,
+         1px  1px 0 black;
     text-decoration: none;
 }
 
@@ -110,11 +147,11 @@ body > main {
     width: 80%;
     max-width: 1280px;
     background-color: lightblue;
-    padding: 30px;
+    padding: 10px 10px 10px 20px;
     border-radius: 15px;
     margin: 30px auto;
     min-height: 90vh;
-    box-shadow: 0 0 30px rgba(247, 172, 212, 0.75),
-                0 0 60px rgba(247, 172, 212, 0.6),
-                0 0 80px rgba(247, 172, 212, 0.4);
+    box-shadow: 0 0 30px rgba(var(--club-pink), 0.75),
+                0 0 60px rgba(var(--club-pink), 0.6),
+                0 0 80px rgba(var(--club-pink), 0.4);
 }
