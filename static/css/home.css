@@ -1,34 +1,34 @@
 :root {
     --club-pink: 247, 172, 212;
     --club-blue: 192, 239, 255;
-    --background: url("../imgs/background.gif");
+    --background: url('../imgs/background.gif');
     --default-font-sz: 16px;
     --page-margin: 64px;
 }
 
 @font-face {
-    font-family: "VCR MONO";
+    font-family: 'VCR MONO';
     src:
-        local("VCR MONO"),
-        url("../fonts/VCR_OSD_MONO_1.001.ttf") format("truetype");
+        local('VCR MONO'),
+        url('../fonts/VCR_OSD_MONO_1.001.ttf') format('truetype');
     font-style: normal;
     font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
-    font-family: "SFAlien";
+    font-family: 'SFAlien';
     src:
-        local("SFAlien"),
-        url("../fonts/SFAlienEncounters.ttf") format("truetype");
+        local('SFAlien'),
+        url('../fonts/SFAlienEncounters.ttf') format('truetype');
     font-style: normal;
 }
 
 @font-face {
-    font-family: "Adventurer";
+    font-family: 'Adventurer';
     src:
-        local("Adventurer"),
-        url("../fonts/Adventurer.ttf") format("truetype");
+        local('Adventurer'),
+        url('../fonts/Adventurer.ttf') format('truetype');
     font-style: normal;
 }
 
@@ -38,7 +38,7 @@ body {
     margin: 0;
     background: var(--background) no-repeat center center fixed;
     background-size: cover;
-    font-family: "Adventurer" !important;
+    font-family: 'Adventurer' !important;
     display: flex;
     flex-direction: column;
     text-align: left;
@@ -106,7 +106,7 @@ button {
 
 .menu-dropdown a {
     display: block;
-    font-family: "VCR MONO", sans-serif;
+    font-family: 'VCR MONO', sans-serif;
     color: lightblue;
     text-decoration: none;
 }
@@ -151,7 +151,7 @@ form {
 }
 
 .brand-text {
-    font-family: "SFAlien", sans-serif;
+    font-family: 'SFAlien', sans-serif;
 }
 
 .twitterPng {
