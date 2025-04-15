@@ -42,8 +42,7 @@
                         </a>
                     </div>
                 </nav>
-
-                {% block content %} {% endblock %}
+                <div id="page-tranisition" class="fade-in">{% block content %} {% endblock %}</div>
             </div>
         </main>
 
@@ -51,4 +50,6 @@
             <!--- adding socials here --->
         </footer>
     </body>
+
+    <script src="{% static 'js/transition.js' %}"></script>
 </html>
