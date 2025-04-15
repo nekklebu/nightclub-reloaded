@@ -22,6 +22,7 @@ def that_one_time():
             body=body,
             image=_that_one_picture()
             )
+
 @pytest.fixture
 def plastic_cups():
     return Project.objects.create(

@@ -24,7 +24,6 @@ def test_project_details_displayed(plastic_cups, client):
 @pytest.mark.django_db
 def test_blog_displayed(that_one_time, client):
     response = client.get(reverse('blog-list'))
-    print(response.content.decode())
     assert that_one_time.title in response.content.decode()
     assert that_one_time.body not in response.content.decode()
 
