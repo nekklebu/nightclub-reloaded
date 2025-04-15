@@ -1,0 +1,209 @@
+:root {
+    --club-pink: 247, 172, 212;
+    --club-blue: 192, 239, 255;
+    --background: url('../imgs/background.gif');
+    --default-font-sz: 16px;
+    --page-margin: 64px;
+}
+
+@font-face {
+    font-family: "VCR MONO";
+    src: local('VCR MONO'),
+    url('../fonts/VCR_OSD_MONO_1.001.ttf') format("truetype");
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SFAlien";
+    src: local('SFAlien'),
+    url('../fonts/SFAlienEncounters.ttf') format("truetype");
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Adventurer";
+    src: local('Adventurer'),
+    url('../fonts/Adventurer.ttf') format("truetype");
+    font-style: normal;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--background) no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Adventurer" !important;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+h1 {
+    padding: 5px;
+    font-size: 32px;
+    text-align: center;
+    background: rgba(var(--club-pink), 1);
+    color:white;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgba(var(--club-blue), 0.8),
+      0 0 50px rgba(var(--club-blue), 0.5),
+      0 0 80px rgba(var(--club-blue), 0.3);
+}
+
+#header {
+    background: rgba(var(--club-pink), 1);
+    width: 80%;
+    max-width: 1280px;
+    color:white;
+    margin: 0 auto;
+    border-radius: 0px 0px 15px 15px;
+    box-shadow: 0 0 30px rgba(var(--club-blue), 0.8),
+      0 0 50px rgba(var(--club-blue), 0.5),
+      0 0 80px rgba(var(--club-blue), 0.3);
+    text-shadow:
+        0 0 3px rgba(0,0,0, 0.8),
+        0 0 5px rgba(0,0,0, 0.5),
+        0 0 8px rgba(0,0,0, 0.3);
+    outline: 2px solid orange;
+}
+
+#content-start {
+    width: 80%;
+    max-width: 1280px;
+    margin: 0 auto;
+    justify-items: left;
+    text-shadow:
+        0 0 3px rgba(0,0,0, 0.8),
+        0 0 5px rgba(0,0,0, 0.5),
+        0 0 8px rgba(0,0,0, 0.3);
+}
+
+#content-start * {
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+#content-related {
+    color: white;
+    background-color: rgba(var(--club-pink), 1);
+    border-radius: 10px;
+    box-shadow: 0 0 30px rgba(var(--club-blue), 0.8),
+      0 0 50px rgba(var(--club-blue), 0.5),
+      0 0 80px rgba(var(--club-blue), 0.3);
+}
+
+#content-related .module h2 {
+    color: white;
+    font-size: 24px;
+    margin: auto auto;
+    border-bottom: 1px solid white;
+}
+
+#content-related .module h3 {
+    color: white;
+    font-size: 20px;
+    margin: auto auto;
+    padding: 5px;
+}
+
+#content-related .module p {
+    color: white;
+    font-size: 16px;
+    margin: auto auto;
+    padding: 5px;
+}
+
+img { 
+    display: inline-block; 
+}
+
+button {
+    width: 25px;
+    height: 25px;
+}
+
+ul {
+    display: table;
+    margin: 0 auto;
+}
+
+form {
+    display: table;
+    margin-left: auto;
+    margin-right: auto;
+    display: inline-block;
+}
+
+#content-main {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: rgba(var(--club-blue), 0.8);
+    color:white;
+    text-shadow:
+        0 0 3px rgba(0,0,0, 0.8),
+        0 0 5px rgba(0,0,0, 0.5),
+        0 0 8px rgba(0,0,0, 0.3);
+    box-shadow: 0 0 10px rgba(var(--club-blue), 0.8),
+      0 0 50px rgba(var(--club-blue), 0.5),
+      0 0 80px rgba(var(--club-blue), 0.3);
+    border-radius: 3px 3px 10px 10px;
+}
+
+.module table {
+    background: rgba(var(--club-blue), 1);
+}
+
+.module caption {
+    background: rgba(var(--club-blue), 1);
+    border-radius: 3px 3px 0px 0px;
+}
+
+th {
+    border-bottom: 1px solid white;
+}
+
+td {
+    border-bottom: 1px solid white;
+}
+
+tr:nth-child(even) {
+    background-color:#E0E3DB;
+}
+tr:nth-child(odd) {
+    background-color:#EFF2EA;
+}
+
+a {
+    color: rgba(var(--club-pink), 1);
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: rgba(192, 239, 255, 1);
+    text-shadow:
+        0 0 3px rgba(0,255,0, 0.8),
+        0 0 5px rgba(0,255,0, 0.5),
+        0 0 8px rgba(0,255,0, 0.3);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+@media (max-width:670px) {
+    .body-bg {
+        background-image: none;
+    }
+}
+
+body > main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+

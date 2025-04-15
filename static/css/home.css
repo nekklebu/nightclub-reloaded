@@ -1,57 +1,137 @@
+:root {
+    --club-pink: 247, 172, 212;
+    --club-blue: 192, 239, 255;
+    --background: url('../imgs/background.gif');
+    --default-font-sz: 16px;
+    --page-margin: 64px;
+}
+
 @font-face {
     font-family: "VCR MONO";
     src: local('VCR MONO'),
-         url('../fonts/VCR_OSD_MONO_1.001.ttf') format("truetype");
+    url('../fonts/VCR_OSD_MONO_1.001.ttf') format("truetype");
     font-style: normal;
-    font-weight 400;
+    font-weight: 400;
     font-display: swap;
 }
 
 @font-face {
     font-family: "SFAlien";
     src: local('SFAlien'),
-         url('../fonts/SFAlienEncounters.ttf') format("truetype");
+    url('../fonts/SFAlienEncounters.ttf') format("truetype");
     font-style: normal;
 }
 
 @font-face {
     font-family: "Adventurer";
     src: local('Adventurer'),
-         url('../fonts/Adventurer.ttf') format("truetype");
+    url('../fonts/Adventurer.ttf') format("truetype");
     font-style: normal;
 }
 
-html,
-body {
-    background-image: url('../imgs/background.gif');
-    background-color: lightblue;
-    padding-top: 2px;
-    margin: auto;
+html, body {
+    height: 100%;
+    margin: 0;
+    background: var(--background) no-repeat center center fixed;
+    background-size: cover;
     font-family: "Adventurer" !important;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+p {
+    font-size: 18px;
+    margin: 20px calc(var(--page-margin) + 32px);
+}
+h1 {
+    font-size: 36px;
+    text-align: center;
+}
+h2 {
+    font-size: 24px;
+    margin: 10px var(--page-margin);
+}
+
+h3 {
+    font-size: 20px;
+    margin: 10px var(--page-margin);
+}
+
+.default-font-behavior {
+
+}
+
+img { 
+    display: inline-block; 
+}
+
+button {
+    width: 25px;
+    height: 25px;
+}
+
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.main-menu {
+    position: relative;
+    font-size: var(--default-font-sz);
+    cursor: pointer;
+    padding-top: 6px;
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    top:  20px;
+    left: 10px;
+    background: rgba(var(--club-pink), 1);
+    border-radius: 8px;
+    box-shadow: 0 0 5px  rgba(255,255,255,0.8),
+    0 0 8px  rgba(255,255,255,0.5),
+    0 0 13px rgba(255,255,255,0.3);
+    padding: 10px;
+    flex-direction: column;
     text-align: center;
 }
 
-p { display: inline-block; max-width: 400px; }
-h1 { display: inline-block; max-width: 300px; }
-img { 
-    display: inline-block; 
-    margin-right: 2px;
+.menu-dropdown a {
+    display: block;
+    font-family: "VCR MONO", sans-serif;
+    color: lightblue;
+    text-decoration: none;
 }
 
-button { width: 25px; height: 25px; }
+.menu-dropdown a:hover {
+    color: rgba(var(--club-pink), 1);
+    text-shadow:
+        0 0 3px rgba(0, 255, 0, 0.8), 
+        0 0 5px rgba(0, 255, 0, 0.5),
+        0 0 8px rgba(0, 255, 0, 0.3);
+}
 
-.header-links { float: right; }
+.main-menu:hover .menu-dropdown {
+    display: flex;
+}
 
+.menu-dropdown:hover .menu-dropdown{
+    display: flex;
+}
 
-.body-bg {
-    background-color: lightblue;
-    width: 50vw;
-    height: auto;
-    max-width: 600px;
-    display: inline-block;
-    background-position: 10%;
-    background-repeat: no-repeat;
-    background-size: 40%;
+.socials-links {
+    display: flex;
+    gap: 3px;
+}
+
+.socials-links a img {
+    vertical-align: middle;
+    width: 25px;
+    height: 25px;
 }
 
 ul {
@@ -67,18 +147,9 @@ form {
 }
 
 .brand-text {
-    font-family: "SFAlien";
+    font-family: "SFAlien", sans-serif;
 }
 
-.header-text {
-    background-color: lightblue;
-    width: 50vw;
-    max-width: 600px;
-    display: inline-block;
-    text-align: inherit;
-    margin-top: 0px;
-    margin-left: 60px;
-}
 
 .twitterPng {
     margin-left: 2px;
@@ -86,8 +157,17 @@ form {
 }
 
 a {
-    color: inherit;
+    color: rgba(var(--club-pink), 1);
     text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: rgba(192, 239, 255, 1);
+    text-shadow:
+        0 0 3px rgba(0,255,0, 0.8),
+        0 0 5px rgba(0,255,0, 0.5),
+        0 0 8px rgba(0,255,0, 0.3);
 }
 
 * {
@@ -95,8 +175,27 @@ a {
 }
 
 @media (max-width:670px) {
-    .body-bg { background-image: none; }
+    .body-bg {
+        background-image: none;
+    }
 }
 
-@media (max-width:392px) {
+body > main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.content-wrapper {
+    width: 80%;
+    max-width: 1280px;
+    background-color: lightblue;
+    padding: 0px 5px 20px 5px;
+    border-radius: 15px;
+    margin: 30px auto;
+    min-height: 90vh;
+    box-shadow: 0 0 30px rgba(var(--club-pink), 0.8),
+    0 0 50px rgba(var(--club-pink), 0.5),
+    0 0 80px rgba(var(--club-pink), 0.3);
 }
