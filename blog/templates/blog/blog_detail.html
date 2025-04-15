@@ -3,5 +3,6 @@
 <h1>{{ object.title }}</h1>
 <p>{{ object.date_posted }}</p>
 <p>{{ object.body }}</p>
-
-{% endblock %}
+{% if object.image %}
+<img src="{{ object.image.url }}" alt="{{ object.title }}" />
+{% endif %} {% endblock %}
