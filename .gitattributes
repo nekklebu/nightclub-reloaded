@@ -1,0 +1,5 @@
+# forcing LF for all shell and config files
+*.sh text eol=lf
+*.env text eol=lf
+*.py text eol=lf
+Dockerfile text eol=lf
