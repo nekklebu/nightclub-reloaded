@@ -1,13 +1,11 @@
-{% extends 'base.html' %}
-{% load static %}
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <h1>My Projects</h1>
 <ul>
-{% for project in projects %}
-<li>
-    <a href="{% url 'project-detail' project.pk %}">{{ project.title }}</a>
-</li>
-{% endfor %}
+    {% for project in projects %}
+    <li>
+        <a href="{% url 'project-detail' project.pk %}">{{ project.title }}</a>
+    </li>
+    {% endfor %}
 </ul>
 
 {% endblock %}

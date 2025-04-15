@@ -55,6 +55,9 @@ dmypy.json
 # Other
 *.sqlite3
 
+# vim
+*.sw*
+
 # dotenv
 .env
 
