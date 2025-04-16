@@ -34,10 +34,8 @@ Function Build {
         $projectroot = "./"
         $port = $PORT_SITE
 
-#        TEMP disabled @TODO this doesnt collect anything
-#        with my project structured how it is
-#        Write-Host "Collecting static files,,,"
-#        python manage.py collectstatic --clear --no-input
+        Write-Host "Collecting static files,,,"
+        Copy-Item "${projectroot}"-Recurse
 
     } elseif ( $target -eq "content-server" ) {
         $projectroot="./static_server"
@@ -55,18 +53,22 @@ Function Build {
         docker build -f $dockerfile -t $target .
     }
 
-    $volumeFlag = "-v"
-    $volumeValue= "${hostroot}:/app"
-    $volumeArg = if ( $local ) { "$volumeFlag $volumeValue" } else {""}
+    # Building docker run args
     $runArgs = @(
     "run",
     $detachPreference,
     "-p", "${port}:${port}",
-    "--env-file", $envfile,
-    $volumeArg,
-    "--name", $projContainerMap[$target],
-    $target
-            )
+    "--env-file", $envfile
+    )
+    if ( $local ) {
+        $runArgs += "-v"
+        $runArgs += "${hostroot}:/app"
+    }
+
+    $runArgs += @(
+        "--name", $projContainerMap[$target],
+        $target
+    )
 
     Write-Host "Running container,,,"
     Write-Host ("docker " + $($runArgs -join ' '))
