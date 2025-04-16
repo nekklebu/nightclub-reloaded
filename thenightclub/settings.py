@@ -22,17 +22,28 @@ env = environ.Env()
 environ.Env.read_env(os.path.join(BASE_DIR, ".env"))
 
 
+def resolve_environment(var, default=""):
+    print(f"READ {var}={default}")
+    print(
+        "DEBUG os.environ.get(var)={}\nDEBUG env(var, default=default)={}".format(
+            os.environ.get(var), env(var, default=default)
+        )
+    )
+    return os.environ.get(var) if os.environ.get(var) else env(var, default=default)
+
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env("SECRET_KEY")
+SECRET_KEY = resolve_environment("SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = env.bool("DEBUG", default="False")
+DEBUG = resolve_environment("DEBUG", default="False")
 
-ALLOWED_HOSTS = env("ALLOWED_HOSTS", default="*").split(",")
-
+ALLOWED_HOSTS = resolve_environment(
+    "ALLOWED_HOSTS", default="localhost,127.0.0.1"
+).split(",")
 
 # Application definition
 
@@ -43,12 +54,14 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "corsheaders",
     # User-defined apps
     "portfolio",
     "blog",
 ]
 
 MIDDLEWARE = [
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -58,6 +71,8 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+CORS_ALLOW_ALL_CREDENTIALS = True
+CORS_ALLOWED_ORIGINS = ["http://localhost:8080"]
 ROOT_URLCONF = "thenightclub.urls"
 
 TEMPLATES = [
@@ -123,7 +138,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = "http://localhost:9090/"
+STATIC_URL = resolve_environment("STATIC_URL", default="http://localhost:9090/")
 STATIC_ROOT = BASE_DIR / "static_server" / "staticfiles"
 STATICFILES_DIRS = [BASE_DIR / "static/"]
 
