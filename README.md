@@ -3,10 +3,14 @@
 [Why The Nightclub?](docs/philosophy.md##why-the-nightclub)
 
 Welcome! To my little digital venue for any projects, writing, and general experiments with code/design I have to share.
+<br>
+
+[💥💥get in on the fun now!!!💥💥](https://nightclub-site-255993342952.us-central1.run.app/)
 
 ## Tech Stack
 
-**Backend:** Django (with custom `blog` and `portfolio` apps)
+
+<br>**Backend:** Django (with custom `blog` and `portfolio` apps)
 <br>**Frontend:** Django Templates + vanilla HTML/CSS
 <br>**Database:** PostgreSQL (but flexible enough to go SQLite for local spins)
 <br>**DevOps:** Docker, Google Cloud Run (in progress), GitHub Actions for CI/CD
