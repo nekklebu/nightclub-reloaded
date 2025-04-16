@@ -35,7 +35,7 @@ Function Build {
         $port = $PORT_SITE
 
         Write-Host "Collecting static files,,,"
-        Copy-Item "${projectroot}"-Recurse
+        python manage.py collectstatic --clear --no-input
 
     } elseif ( $target -eq "content-server" ) {
         $projectroot="./static_server"
