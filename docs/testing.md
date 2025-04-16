@@ -11,4 +11,4 @@ Testing for `thenightclub` is still in its early stages, but thats okay. It's a 
 ---
 
 > _"She that breaks a thing to find out what it is has left the path of wisdom"_ -- Gandalfina, <br>
-> ------------------------------------------------------------------------------------------------The Fellowship of the Ring July 1954
+> --------------------------------------------------------------------------------- The Fellowship of the Ring July 1954
