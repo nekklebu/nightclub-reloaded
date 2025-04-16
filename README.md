@@ -1,49 +1,29 @@
 # The Nightclub
 
-This is my own site – a subdued online space for my projects, writing, and miscellaneous experiments with design and code. It's constructed in Django, Docker'd for container-y goodness, and (coming soon) hosted on Google Cloud.
+[Why The Nightclub?](docs/philosophy.md##why-the-nightclub)
 
-## Technology Stack
+Welcome! To my little digital venue for any projects, writing, and general experiments with code/design I have to share.
 
-- **Backend:** Django with own `blog` and `portfolio` apps  
-- **Front End:** Django Templates with plain HTML/CSS  
-- **Database:** PostgreSQL (but can switch to SQLite for local test spins)  
-- **DevOps:** Docker, Google Cloud Run (in progress), GitHub Actions for CI/CD  
-- **Secrets Management:** .env based currently  
+## Tech Stack
 
-## Why I am Here
-
-Honestly, I just missed the exhilaration of creating something from scratch. Part sandbox, part calling card. I wanted to push my abilities again — from backend craftsmanship to infrastructure challenges. This endeavor is about renewal, reignition, and writing with heart.
+**Backend:** Django (with custom `blog` and `portfolio` apps)
+<br>**Frontend:** Django Templates + vanilla HTML/CSS
+<br>**Database:** PostgreSQL (but flexible enough to go SQLite for local spins)
+<br>**DevOps:** Docker, Google Cloud Run (in progress), GitHub Actions for CI/CD
+<br>**[Formatting:](docs/formatting.md)** `black` for python, `shfmt` for shell, `dockfmt` for Dockerfiles, `prettier` for most else.
+<br>**Secrets Management:** `.env` based for now
 
 ## Local Setup
 
-\`\`\`bash
+```ps1
 # Clone and spin up
-git clone https://github.com
-cd thenightclub
-./dev.sh # builds & runs both containers
+>git clone https://github.com/nekklebu/thenightclub.git
+>cd thenightclub
+>.\venv\Scripts\Activate
+(venv)>pip install -r requirements.txt
+(venv)>.\docker\dev.ps1 # builds and runs both containers
+```
 
-# Load environment variables
-cp .env.example .env
-# (insert secrets such as database URL, Django key, etc.)
-\`\`\`
+## Future Plans
 
-## Deploying to Cloud
-
-This site is being migrated to Google Cloud Run. See `docs/cloud.md` for more information.
-
-## Dev Notes
-
-This repository is lovingly formatted with:
-- `black`, `isort` for Python
-- `shfmt` for scripting in the shell
-- `dockfmt` for Dockerfiles
-
-Refer to `docs/formatting.md` for more
-
-## License
-
-This MIT License
-
----
-
-Less grind, more vibes.
+Clearly, this project is at the inception of her own divine journey. I've tried to outline some details and future plans for [the cloud](docs/cloud.md), [testing](docs/testing.md), and [any other future dev goals/inspirations.](docs/future.md)
