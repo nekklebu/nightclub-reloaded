@@ -1,3 +1,6 @@
 [submodule "jukebox-api"]
 	path = jukebox-api
 	url = https://github.com/nekklebu/jukebox-api.git
+[submodule "static_content_server"]
+	path = static_content_server
+	url = https://github.com/nekklebu/nightclub-static-content-server.git
