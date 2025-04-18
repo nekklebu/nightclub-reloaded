@@ -38,12 +38,14 @@ Function Build {
         python manage.py collectstatic --clear --no-input
 
     } elseif ( $target -eq "content-server" ) {
-        $projectroot="./static_server"
+        $projectroot = "./static_content_server/"
         $port = $PORT_SERV
     }
 
+    pushd $projectroot
+
     # normalize path for docker
-    $hostroot   = Get-DockerNormalizedPath $projectroot
+    $hostroot   = Get-DockerNormalizedPath ${PWD}
     $dockerfile = "$hostroot/Dockerfile"
     $envfile    = "$hostroot/.env"
 
@@ -75,6 +77,8 @@ Function Build {
     if ( -Not $dryRun ) {
         docker @runArgs
     }
+
+    popd
 
     return
 }
