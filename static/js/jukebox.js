@@ -20,6 +20,15 @@ let playingOutro = false;
 let audioUnlocked = false;
 let doorLocked = false;
 
+window.addEventListener('DOMContentLoaded', async () => {
+    const res = await fetch('http://localhost:4040/random-track');
+    const data = await res.json();
+
+    if (data.preview_url) {
+        audio.src = data.preview_url;
+    }
+});
+
 document.body.addEventListener(
     'click',
     () => {
@@ -30,25 +39,35 @@ document.body.addEventListener(
 
 function fadeAudioIn(duration) {
     if (!audioUnlocked) return;
+
     audio.volume = 0;
     audio.play();
+
     const step = 0.05;
-    const interval = duration * step;
+    let t = 0;
+
     const fadeIn = setInterval(() => {
-        if (audio.volume < 1) {
-            audio.volume = Math.min(1, audio.volume + step);
+        if (t < 1) {
+            t = Math.min(1, t + step);
+            // Power4 function scaling to emulate the door opening
+            const volume = t === 1 ? 1 : Math.pow(t, 4);
+            audio.volume = volume;
         } else {
             clearInterval(fadeIn);
         }
-    }, interval);
+    }, duration * step);
 }
 
 function fadeAudioOut(duration) {
     const step = 0.05;
+    let t = 1;
     const interval = duration * step;
     const fadeOut = setInterval(() => {
-        if (audio.volume > 0) {
-            audio.volume = Math.max(0, audio.volume - step);
+        if (t > 0) {
+            t = Math.max(0, t - step);
+            // Power4 function scaling to emulate the door closing
+            const volume = t === 0 ? 0 : Math.pow(t, 4);
+            audio.volume = volume;
         } else {
             clearInterval(fadeOut);
             audio.pause();
