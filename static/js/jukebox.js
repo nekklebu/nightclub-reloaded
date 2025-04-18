@@ -22,6 +22,23 @@ let audioFading = false;
 let doorSealed = false;
 let doorOpened = false;
 
+function getEndOfDay() {
+    const now = new Date();
+    const endOfDay = new Date(now);
+
+    endOfDay.setHours(23, 59, 59, 999);
+    return endOfDay;
+}
+
+function setCookie(name, value, expiresAt) {
+    document.cookie = `${name}=${value}; expires=${expiresAt.toUTCString()}; path=/`;
+}
+
+function getCookie(name) {
+    const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
+    return match ? match[2] : null;
+}
+
 window.addEventListener('DOMContentLoaded', async () => {
     const res = await fetch('http://localhost:4040/random-track');
     const data = await res.json();
@@ -94,9 +111,13 @@ function fadeAudioOut(duration) {
 container.addEventListener('mouseenter', () => {
     if (playingIntro || hovering || doorSealed) return;
 
+    const opened = getCookie('jukebox_opened');
+    if (opened) return;
+
     waitFor(
         () => audioFading,
         () => {
+            setCookie('jukebox_opened', 'true', getEndOfDay());
             audioFading = true;
             fadeAudioIn(gifDuration - 1000);
             img.src = turnOn;
