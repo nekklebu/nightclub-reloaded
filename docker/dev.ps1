@@ -1,18 +1,17 @@
 # dev-local.ps1
 param (
-        [switch]$detach=$True,
         [switch]$local,
         [switch]$kill,
         [switch]$dryRun,
-        [ValidateSet("all", "nightclub-site", "content-server")]
+        [ValidateSet("all", "nightclub-site", "content-server", "jukebox-api")]
         [string]$target="all"
       )
 
 $ErrorActionPreference = "Stop"
 $PORT_SITE = "8080"
-$PORT_SERV = "9090"
-$detachPreference = if ( $detach ) { "-d" } else { "" }
-$projContainerMap = @{"nightclub-site"="club-container"; "content-server"="content-container"}
+$PORT_CONTENT_API = "9090"
+$PORT_JUKEBOX_API = "4040"
+$projContainerMap = @{"nightclub-site"="club-container"; "content-server"="content-container"; "jukebox-api"="jukebox-api"}
 
 Function Get-DockerNormalizedPath {
     param ([string]$path)
@@ -27,6 +26,7 @@ Function Build {
     if ( $target -eq "all" ) {
         Build -target "nightclub-site"
         Build -target "content-server"
+        Build -target "jukebox-api"
         return
     }
 
@@ -38,12 +38,17 @@ Function Build {
         python manage.py collectstatic --clear --no-input
 
     } elseif ( $target -eq "content-server" ) {
-        $projectroot="./static_server"
-        $port = $PORT_SERV
+        $projectroot = "./static_content_server/"
+        $port = $PORT_CONTENT_API
+    } elseif ( $target -eq "jukebox-api" ) {
+        $projectroot = "./jukebox-api/"
+        $port = $PORT_JUKEBOX_API
     }
 
+    pushd $projectroot
+
     # normalize path for docker
-    $hostroot   = Get-DockerNormalizedPath $projectroot
+    $hostroot   = Get-DockerNormalizedPath ${PWD}
     $dockerfile = "$hostroot/Dockerfile"
     $envfile    = "$hostroot/.env"
 
@@ -56,7 +61,7 @@ Function Build {
     # Building docker run args
     $runArgs = @(
     "run",
-    $detachPreference,
+    "-d",
     "-p", "${port}:${port}",
     "--env-file", $envfile
     )
@@ -75,6 +80,8 @@ Function Build {
     if ( -Not $dryRun ) {
         docker @runArgs
     }
+
+    popd
 
     return
 }

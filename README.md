@@ -9,7 +9,6 @@ Welcome! To my little digital venue for any projects, writing, and general exper
 
 ## Tech Stack
 
-
 <br>**Backend:** Django (with custom `blog` and `portfolio` apps)
 <br>**Frontend:** Django Templates + vanilla HTML/CSS
 <br>**Database:** PostgreSQL (but flexible enough to go SQLite for local spins)
@@ -22,6 +21,7 @@ Welcome! To my little digital venue for any projects, writing, and general exper
 ```ps1
 # Clone and spin up
 >git clone https://github.com/nekklebu/thenightclub.git
+>git submodule update --init
 >cd thenightclub
 >.\venv\Scripts\Activate
 (venv)>pip install -r requirements.txt

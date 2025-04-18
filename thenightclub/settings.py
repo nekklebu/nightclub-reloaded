@@ -139,7 +139,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = resolve_environment("STATIC_URL", default="http://localhost:9090/")
-STATIC_ROOT = BASE_DIR / "static_server" / "staticfiles"
+STATIC_ROOT = BASE_DIR / "static_content_server" / "staticfiles"
 STATICFILES_DIRS = [BASE_DIR / "static/"]
 
 MEDIA_URL = "/media/"
