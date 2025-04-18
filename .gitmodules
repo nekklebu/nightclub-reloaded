@@ -1,0 +1,3 @@
+[submodule "jukebox-api"]
+	path = jukebox-api
+	url = https://github.com/nekklebu/jukebox-api.git
