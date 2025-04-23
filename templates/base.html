@@ -5,6 +5,11 @@
         <meta charset="UTF-8" />
         <title>NightClub: Reloaded</title>
         <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+        <link rel="preload" href="{% static 'imgs/jukebox.png' %}" as="image" type="image/png">
+        <link rel="preload" href="{% static 'imgs/jukebox-start.gif' %}" as="image" type="image/gif">
+        <link rel="preload" href="{% static 'imgs/jukebox-loop.gif' %}" as="image" type="image/gif">
+        <link rel="preload" href="{% static 'imgs/jukebox-stop.gif' %}" as="image" type="image/gif">
+        <link rel="preload" href="{% static 'audio/record-loop.mp3' %}" as="audio" type="audio/mpeg">
     </head>
 
     <body>
@@ -24,25 +29,35 @@
                     <div class="socials-links">
                         <a href="https://twitter.com/k3estrogen" class="header-link">
                             <img
-                                class="twitterPng"
-                                alt="twitter_png"
-                                src="{% static 'imgs/twitter.png' %}"
-                                width="25"
-                                height="25"
-                            />
+                                    class="twitterPng"
+                                    alt="twitter_png"
+                                    src="{% static 'imgs/twitter.png' %}"
+                                    width="25"
+                                    height="25"
+                                    />
                         </a>
                         <a href="https://opensea.io/nightsakura" class="header-link">
                             <img
-                                class="openseaPng"
-                                alt="opensea_png"
-                                src="{% static 'imgs/os.png' %}"
-                                width="25"
-                                height="25"
-                            />
+                                    class="openseaPng"
+                                    alt="opensea_png"
+                                    src="{% static 'imgs/os.png' %}"
+                                    width="25"
+                                    height="25"
+                                    />
                         </a>
                     </div>
                 </nav>
-                <div id="page-tranisition" class="fade-in">{% block content %} {% endblock %}</div>
+                    <div id="jukebox-container"
+                        data-frame1="{% static 'imgs/jukebox.png' %}"
+                        data-start="{% static 'imgs/jukebox-start.gif' %}"
+                        data-loop="{% static 'imgs/jukebox-loop.gif' %}"
+                        data-stop="{% static 'imgs/jukebox-stop.gif' %}">
+                        <img id="jukebox-img" src="{% static 'imgs/jukebox.png' %}" alt="jukebox">
+                    </div>
+                    <audio id="jukebox-audio" loop>
+                        <source src="{% static 'audio/jukebox-loop.mp3' %}" type="audio/mpeg" />
+                    </audio>
+                    <div id="page-tranisition" class="fade-in">{% block content %} {% endblock %}</div>
             </div>
         </main>
 
@@ -52,4 +67,5 @@
     </body>
 
     <script src="{% static 'js/transition.js' %}"></script>
+    <script src="{% static 'js/jukebox.js' %}"></script>
 </html>
