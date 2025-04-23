@@ -12,6 +12,7 @@ A running wishlist of features, enhancements, and ideas for `thenightclub` — a
 
 ## Medium-Term Ideas
 
+- **Jukebox click redirect**: Open an external link to the full song on the jukebox daily
 - **Admin Interface Styling**: Customize Django admin UI with a personal theme
 - **API Layer**: REST or GraphQL endpoints to expose blog/portfolio data
 - **JavaScript Enhancements**: Page transitions, light interactivity, no heavy framework yet
